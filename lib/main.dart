@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  final WeatherData city = WeatherData(
+      city: "Heilbronn", temperature: 26.5, weahtherCondition: "Regen");
   runApp(const MainApp());
 }
 
@@ -39,14 +41,14 @@ class WeatherApp extends StatelessWidget {
             ),
             Text("Heibronn",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 100, 121, 143),
-                    fontSize: 20,
+                    color: Colors.blue,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold)),
-            Text("26°, Regen "),
+            Text("26.5°, Regen "),
             Text("Bielefeld",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 100, 121, 143),
-                    fontSize: 20,
+                    color: Colors.blue,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold)),
             Text("30°, Sonnig ")
           ],
@@ -54,4 +56,15 @@ class WeatherApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class WeatherData {
+  final String city;
+  final double temperature;
+  final String weahtherCondition;
+
+  WeatherData(
+      {required this.city,
+      required this.temperature,
+      required this.weahtherCondition});
 }
